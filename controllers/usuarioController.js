@@ -24,6 +24,14 @@ const listarUsuario = async (req,res) => {
     
 }
 
+const buscarUno = async (req, res) => {
+    const { 
+        params: { id }
+    } = req;
+    const buscado = await user.getUser(id);
+    res.json(buscado);
+}
+
 
 const actualizarUsuario = async (req, res) => {   
     const {
@@ -49,6 +57,7 @@ const borrarUsuario = async (req,res) => {
 
 module.exports = {
     guardarUsuario,
+    buscarUno,
     listarUsuario,
     actualizarUsuario,
     borrarUsuario

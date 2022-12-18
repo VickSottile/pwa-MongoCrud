@@ -11,9 +11,13 @@ module.exports =  class {
         return todos;
     } 
 
-    async getUser(user){
-        await userModel.findById(id)
+    async getUser(id){
+        const buscado = await userModel.findById(id)
+        return buscado;
+
     }
+    
+
 
     async updateUser(id,userActualizar){
         const actualizado = await userModel.findByIdAndUpdate(id, userActualizar);

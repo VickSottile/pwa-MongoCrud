@@ -7,10 +7,12 @@ const {
     guardarUsuario,
     listarUsuario,
     actualizarUsuario,
-    borrarUsuario
+    borrarUsuario,
+    buscarUno
 } = require('../controllers/usuarioController')
 
 router.get('/',listarUsuario );
+router.get('/:id',buscarUno);
 router.post('/guardar', guardarUsuario);
 router.put('/actualizar/:id', actualizarUsuario);
 //si usamos patch en vez de put, actualiza todos los datos
